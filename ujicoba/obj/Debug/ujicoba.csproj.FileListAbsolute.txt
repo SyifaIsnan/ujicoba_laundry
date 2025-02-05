@@ -1,0 +1,16 @@
+D:\ujicoba\ujicoba\ujicoba\bin\Debug\ujicoba.exe.config
+D:\ujicoba\ujicoba\ujicoba\bin\Debug\ujicoba.exe
+D:\ujicoba\ujicoba\ujicoba\bin\Debug\ujicoba.pdb
+D:\ujicoba\ujicoba\ujicoba\obj\Debug\ujicoba.csproj.AssemblyReference.cache
+D:\ujicoba\ujicoba\ujicoba\obj\Debug\ujicoba.csproj.SuggestedBindingRedirects.cache
+D:\ujicoba\ujicoba\ujicoba\obj\Debug\ujicoba.login.resources
+D:\ujicoba\ujicoba\ujicoba\obj\Debug\ujicoba.Properties.Resources.resources
+D:\ujicoba\ujicoba\ujicoba\obj\Debug\ujicoba.utama.resources
+D:\ujicoba\ujicoba\ujicoba\obj\Debug\ujicoba.csproj.GenerateResource.cache
+D:\ujicoba\ujicoba\ujicoba\obj\Debug\ujicoba.csproj.CoreCompileInputs.cache
+D:\ujicoba\ujicoba\ujicoba\obj\Debug\ujicoba.exe
+D:\ujicoba\ujicoba\ujicoba\obj\Debug\ujicoba.pdb
+D:\ujicoba\ujicoba\ujicoba\obj\Debug\ujicoba.datauser.resources
+D:\ujicoba\ujicoba\ujicoba\obj\Debug\ujicoba.Order.resources
+D:\ujicoba\ujicoba\ujicoba\obj\Debug\ujicoba.Pilihlayanan.resources
+D:\ujicoba\ujicoba\ujicoba\obj\Debug\ujicoba.report.resources
