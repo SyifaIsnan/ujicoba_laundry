@@ -236,7 +236,59 @@ namespace ujicoba
 
         private void button1_Click(object sender, EventArgs e)
         {
+            using (var conn = P.conn())
+            {
+                try
+                {
+                    if (P.validasi(this.Controls))
+                    {
+                        MessageBox.Show("Data yang ingin diinput harus lengkap!");
+                    }
+                    else
+                    {
 
+                        SqlCommand cekdata = new SqlCommand("select count(*) from [Pelanggan] where nomortelepon = @nomortelepon", conn);
+                        cekdata.CommandType = CommandType.Text;
+                        conn.Open();
+                        cekdata.Parameters.AddWithValue("@nomortelepon", textBox1.Text);
+                        int datapelanggan = (int)cekdata.ExecuteScalar();
+                        if (datapelanggan == 0)
+                        {
+                            SqlCommand tambah = new SqlCommand("insert into [Pelanggan] values (@nomortelepon , @nama, @alamat)", conn);
+                            tambah.CommandType = CommandType.Text;
+                            conn.Open();
+                            tambah.Parameters.AddWithValue("@nomortelepon", textBox1.Text);
+                            tambah.Parameters.AddWithValue("@nama", textBox2.Text);
+                            tambah.Parameters.AddWithValue("@alamat", richTextBox1.Text);
+                            tambah.ExecuteNonQuery();
+                            conn.Close();
+                        }
+
+
+                        SqlCommand cmd = new SqlCommand("insert into [Order] values (@nomortelepon, @tanggalorder, @tanggalselesai, @biayaantar, @biayajemput , @biayahari, @petugasantar, @statusorder)", conn);
+                        cmd.CommandType = CommandType.Text;
+                        conn.Open();
+                        cmd.Parameters.AddWithValue("@nomortelepon", textBox1.Text);
+                        cmd.Parameters.AddWithValue("@tanggalorder", dateTimePicker1.Value);
+                        cmd.Parameters.AddWithValue("@tanggalselesai", dateTimePicker2.Value);
+                        cmd.Parameters.AddWithValue("@biayaantar", textBox5.Text);
+                        cmd.Parameters.AddWithValue("@biayajemput", textBox4.Text);
+                        cmd.Parameters.AddWithValue("@biayahari", textBox6.Text);
+                        cmd.Parameters.AddWithValue("@petugasantar", comboBox1.SelectedValue);
+                        cmd.Parameters.AddWithValue("@statusorder", "PENDING");
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Data berhasil ditambahkan!"); 
+                        tampildata();
+
+                        conn.Close();
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
